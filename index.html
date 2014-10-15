@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+  <meta charset="utf-8">
+  <title>BrainBrowser</title>
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/default.css" id="theme"> 
+  <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+  <link rel="icon" type="image/png" href="img/brainbrowser.png">
+  <style>
+    #web-service {
+      width: 400px;
+      height: 400px;
+      margin: 40px auto;
+    }
+
+    .reveal h1 {
+      font-size: 2.4em;
+    }
+
+    .reveal .slide-number {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .reveal section img {
+      max-height: 600px;
+    }
+
+    #dti {
+      position: absolute;
+      left: 610px;
+    }
+
+    #volume-viewer {
+      position: absolute;
+      left: 160px;
+    }
+
+    #javascript, #html5, #webgl {
+      background-color:white;
+      height: 200px;
+    }
+
+    #volume-viewer2 {
+      height: 200px;
+      margin-top: 50px;
+    }
+    #atlas {
+      position: absolute;
+      top: 200px;
+      right: 50px;
+      height: 250px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Leveraging Web Technologies for Neurological Data Visualization</h1>
+        <p>Tarek Sherif</p>
+        <p>McGill Centre for Integrative Neuroscience</p>
+      </section>
+
+      <section>
+        <h2>The Web was...</h2>
+        <img src="img/cern.png">
+      </section>
+
+      <section>
+        <h2>and then it was</h2>
+        <img src="img/space-jam.png">
+      </section>
+
+      <section>
+        <h2>But things have changed...</h2>
+        <img src="img/surface-viewer.png"/>
+      </section>
+      
+      <section>
+        <h2>Why do you care?</h2>
+        <div id="web-service">
+        </div>
+      </section>
+
+      <section>
+        <h2>Why do you care?</h2>
+        <h3>The Web is everywhere!</h3>
+        <ul>
+          <li>No issues with installation</li>
+          <li>
+            Remote visualization without moving data around
+            <ul>
+              <li>Data sharing</li>
+              <li>Collaboration</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Why do you care?</h2>
+        <h3>It's easy</h3>
+        <ul>
+          <li><a target="_blank" href="http://www.lead-dbs.org/">Display some data on your website/blog</a></li>
+          <li><a target="_blank" href="http://onpub.cbs.mpg.de/role-brocas-area-language.html">Dynamic visualization for online publications</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Why do you care?</h2>
+        <h3>It's powerful</h3>
+        <ul>
+          <li><a target="_blank" href="https://brainbrowser.cbrain.mcgill.ca/surface-viewer">Create full-featured visualization apps</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>So what's different now?</h2>
+        <ul>
+          <li>JavaScript sucks less</li>
+          <li>WebGL and HTML5 for high-perfomance graphics</li>
+          <li>Web Workers for multithreading</li>
+          <li>And more!</li>
+        </ul> 
+        <img id="javascript" src="img/JavaScript-logo.png" />
+        <img id="webgl" src="img/webgl-logo.png" />
+        <img id="html5" src="img/HTML5.png" />
+      </section>
+
+      <section>
+        <h2>Standards Compliant</h2>
+        <ul>
+          <li>
+            BrainBrowser uses standards-compliant web technologies
+            <ul>
+              <li>HTML5</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Canvas</li>
+              <li>WebGL (three.js)</li>
+            </ul>
+          </li>
+          <li>
+            Standard technologies for developers
+          </li>
+          <li>
+            No plugins to install for users
+            <ul>
+              <li>No Java, Flash, Unity, etc.</li>
+            </ul>
+          </li>
+        </ul>
+        
+      </section>
+      
+      <section>
+        <h2>Volume Viewer</h2>
+        <ul>
+          <li>
+            Navigate volumetric data in a slice-by-slice manner
+            <ul>
+              <li>
+                Load one or more volumes
+              </li>
+              <li>
+                Navigate through the data
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <img id="volume-viewer2" src="img/volume-viewer.png" />
+      </section>
+
+      <section>
+        <h2>Load Volumes</h2>
+        <ul>
+          <li>Currently, only MINC data is supported
+            <ul>
+              <li>Load raw and header data</li>
+              <li>Plugin architecture leaves door open for other formats</li>
+            </ul>
+          </li>
+          <li>Structural or functional data</li>
+          <li>Multiple volumes can be overlayed</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Navigate</h2>
+        <ul>
+          <li>
+            Sagittal, Coronal and Transverse slices are displayed for a given point in
+            3D space
+          </li>
+          <li>
+            Manipulate the point being viewed by moving a cursor with the mouse
+          </li>
+          <li>
+            Step through time increments for functional data
+          </li>
+        </ul> 
+      </section>
+      
+      <section>
+        <h2>Demos</h2>
+        <ul>
+          <li>
+            <a href="https://brainbrowser.cbrain.mcgill.ca/volume-viewer" target="_blank">Structural Data</a> 
+          </li>
+          <li>
+            <a href="https://brainbrowser.cbrain.mcgill.ca/fmri-viewer" target="_blank">Functional Data</a> 
+          </li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2>Surface Viewer</h2>
+        <ul>
+          <li>Manipulate surface data in real-time 3D
+            <ul>
+              <li>
+                Load one or more surfaces
+              </li>
+              <li>
+                Load intensity data 
+              </li>
+              <li>
+                Manipulate the data 
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <img id="atlas" src="img/atlas.png" />
+      </section>
+      
+      <section>
+        <h2>Load Surfaces</h2>
+        <ul>
+          <li>
+            Supported formats:
+            <ul>
+              <li>
+              MNI Object (polygon or line data)
+              </li>
+              <li>
+                Wavefront Object
+              </li>
+              <li>
+                Freesurfer ASCII
+              </li>
+            </ul>
+          </li>
+          <li>
+            Extensible plugin architecture
+            <ul>
+              <li>
+                If you write a parser for another file format,
+                it can simply be added to BrainBrowser
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Load Intensity Data</h2>
+        <ul>
+          <li>MNI TXT and Freesurfer ASC currently supported</li>
+          <li>
+            Extensible plugin architecture
+            <ul>
+              <li>
+                If you write a parser for another file format,
+                it can simply be added to BrainBrowser
+              </li>
+              <li>Essentially any per-vertex data format</li>
+            </ul>
+          </li>
+          <li>
+            Optionally tie other data to vertices
+            <ul>
+              <li>Region information</li>
+              <li>Text descriptions</li>
+              <li>Images</li>
+            </ul>
+          </li>
+        </ul> 
+      </section>
+      
+      <section>
+        <h2>Manipulate the Data</h2>
+        <ul>
+          <li>
+            Rotate, pan, zoom
+          </li>
+          <li>
+            Change range of intensities displayed
+          </li>
+          <li>
+            Adjust transparency on different parts of the surface
+          </li>
+          <li>
+            View mesh
+          </li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2>Demos</h2>
+        <ul>
+          <li>
+            <a href="https://brainbrowser.cbrain.mcgill.ca/surface-viewer" target="_blank">Surface Viewer</a> 
+          </li>
+          <li>
+            <a href="https://brainbrowser.cbrain.mcgill.ca/macacc-viewer" target="_blank">The MACACC dataset</a> 
+          </li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2>Using BrainBrowser</h2>
+        <ul>
+          <li>
+            Try out the demos: 
+            <a href="https://brainbrowser.cbrain.mcgill.ca" target="_blank">
+              https://brainbrowser.cbrain.mcgill.ca
+            </a>
+            <ul>
+              <li>Try out your own data!</li>
+            </ul>
+          </li>
+          <li>
+            Download the <a href="https://brainbrowser.cbrain.mcgill.ca/#get-brainbrowser" target="_blank">JavaScript library</a> and add it to your website
+            <ul>
+              <li>Fine-grained control over configuration</li>
+              <li>Extend with plugins</li>
+              <li>Must be programmed</li>
+            </ul>
+          </li>
+          <li>
+            Use the <a href="https://brainbrowser.cbrain.mcgill.ca/#web-service" target="_blank">web service</a>
+            <ul>
+              <li>Loads all libraries and dependencies</li>
+              <li>Some aspects can be configured without programming</li>
+              <li>Surface Viewer only</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2>Thanks!</h2>
+          <div>Questions or feedback?</div> 
+          <div>
+            <a href="mailto:tsherif@gmail.com">tsherif@gmail.com</a>
+          </div> 
+      </section>
+      
+    </div>
+  </div>
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+  <script>
+    Reveal.initialize({
+      history: true,
+      slideNumber: true,
+      controls: false,
+      transition: "linear"
+    });
+    function breathe(viewer) {
+      (function update() {
+        requestAnimationFrame(update);
+
+        var scalex =  Math.sin(Date.now() / 500) * 0.05 + 1;
+        var scaley =  Math.sin(Date.now() / 500 + Math.PI) * 0.05 + 1;
+
+        viewer.model.scale.set(scalex, scaley, 1);
+        viewer.updated = true;
+      })();
+    }
+    $("#web-service").load("https://brainbrowser.cbrain.mcgill.ca/surface-viewer-widget?version=2.1.1&model=https://brainbrowser.cbrain.mcgill.ca/models/realct.obj&color_map=https://brainbrowser.cbrain.mcgill.ca/color_maps/spectral.txt&intensity_data=https://brainbrowser.cbrain.mcgill.ca/models/realct.txt&height=400&width=400&viewer_callback=breathe");
+  </script>
+</body>
+</html>s
