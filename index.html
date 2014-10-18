@@ -2,15 +2,15 @@
 <html lang="en">  
 <head>
   <meta charset="utf-8">
-  <title>Leveraging Web Technologies for Neurological Data Visualization</title>
+  <title> Leveraging Web Technologies for Neuroimaging Research</title>
   <link rel="stylesheet" href="css/reveal.min.css">
   <link rel="stylesheet" href="css/theme/default.css" id="theme"> 
   <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
   <link rel="stylesheet" href="css/default.min.css">
   <style>
     #brainbrowser {
-      width: 400px;
-      height: 400px;
+      width: 450px;
+      height: 450px;
       margin: 40px auto;
     }
 
@@ -51,7 +51,7 @@
   <div class="reveal">
     <div class="slides">
       <section>
-        <h1>Leveraging Web Technologies for Neurological Data Visualization</h1>
+        <h1> Leveraging Web Technologies for Neuroimaging Research</h1>
         <p class="me">Tarek Sherif</p>
         <p>McGill Centre for Integrative Neuroscience</p>
       </section>
@@ -67,35 +67,43 @@
       </section>
 
       <section>
-        <h2>But things have changed...</h2>
+        <h2>Then there as a bit of...</h2>
+        <img src="img/gmaps.png">
+      </section>
+
+      <section>
+        <h2>And now you have...</h2>
         <img src="img/surface-viewer.png"/>
       </section>
-      
+
       <section>
         <h2>Why do you care?</h2>
+        <h3>The Web is everywhere!</h3>
         <div id="brainbrowser">
         </div>
       </section>
 
       <section>
         <h2>Why do you care?</h2>
-        <h3>The Web is everywhere!</h3>
+        <h3>It's powerful</h3>
+        <ul>
+          <li>Create full-featured applications</li>
+        </ul>
+        <img id="dti" src="img/dti.png">
+      </section>
+
+      <section>
+        <h2>Why do you care?</h2>
+        <h3>It's easy to use</h3>
         <ul>
           <li>No installation of software</li>
-          <li>
-            Remote visualization without moving data around
-            <ul>
-              <li>Data sharing</li>
-              <li>Collaboration</li>
-            </ul>
-          </li>
           <li>Always up to date</li>
         </ul>
       </section>
 
       <section>
         <h2>Why do you care?</h2>
-        <h3>It's easy</h3>
+        <h3>It's easy to create</h3>
         <pre>
           <code class="javascript">
   BrainBrowser.SurfaceViewer.start("brainbrowser", function(viewer) {
@@ -118,20 +126,12 @@
       </section>
 
       <section>
-        <h2>Why do you care?</h2>
-        <h3>It's powerful</h3>
-        <ul>
-          <li>Create full-featured visualization apps</li>
-        </ul>
-        <img id="dti" src="img/dti.png">
-      </section>
-
-      <section>
         <h2>Case Study</h2>
         <h3><a target="_blank" href="https://brainbrowser.cbrain.mcgill.ca/macacc-viewer">The MACACC Dataset Viewer</a></h3>
         <ul>
           <li>6.3 million data maps</li>
           <li>1TB of data</li>
+          <li>Viewer created using BrainBrowser</li>
         </ul>
       </section>
 
@@ -142,7 +142,7 @@
           <li>JavaScript sucks less</li>
           <li>WebGL and HTML5 for high-perfomance graphics</li>
           <li>Web Workers for multithreading</li>
-          <li>WebSocket and WebRTC</li>
+          <li>WebSocket and WebRTC for communication</li>
         </ul> 
         <img id="javascript" src="img/JavaScript-logo.png">
         <img id="webgl" src="img/webgl-logo.png">
@@ -162,7 +162,7 @@
           <li>
             More robust
             <ul>
-              <li>EcmaScript5 and EcmaScript6</li>
+              <li>EcmaScript 5 and EcmaScript 6</li>
               <li>Add features that facilitate development of complex applications</li>
               <li>Deprecate unsafe features</li>
             </ul>
