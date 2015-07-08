@@ -257,9 +257,11 @@
         }
       });
 
-      viewer.autorotate.x = true;
-      viewer.autorotate.y = true;
-
+      setInterval(function() {
+        viewer.model.scale.x = 1 + Math.sin(Date.now() / 500) / 20; ;
+        viewer.model.scale.y = 1 + Math.sin(Date.now() / 500 + Math.PI) / 20; ;
+        viewer.updated = true;
+      }, 16);
     });
     
   </script>
